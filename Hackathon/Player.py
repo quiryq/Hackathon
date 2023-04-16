@@ -1,6 +1,8 @@
 import pygame, var
 from pygame.locals import *
 from var import screenWidth 
+
+
 class Player(pygame.sprite.Sprite):
     def __init__(self, image):
         super().__init__()
@@ -16,4 +18,7 @@ class Player(pygame.sprite.Sprite):
             self.rect.move_ip(0, -6)
         if not pressed_keys[K_SPACE]:
             self.rect.move_ip(0, 4)
+
+
+
         var.screen.blit(self.image, self.rect)

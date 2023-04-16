@@ -16,9 +16,15 @@ baseY = screenHeight * 0.75
 pipeHeight = 500
 pipeWidth = 70
 last_pipe = pygame.time.get_ticks()
-
-
+imagePipe = (
+pygame.transform.rotate(pygame.transform.scale(pygame.image.load('images/textures/pipe.png'), (pipeWidth, pipeHeight)), 180),
+pygame.transform.scale(pygame.image.load('images/textures/pipe.png'), (pipeWidth,  pipeHeight))
+)
+imageEnemies = pygame.transform.scale( pygame.image.load('images/enemy.png'), (40, 40))
+mario_image = pygame.image.load('images/mario.png')
+speedEnemies = 6
 score = 0
+
 
 
 # Skins
@@ -29,8 +35,13 @@ skin2 = pygame.transform.scale(pygame.image.load('images/Skins/skin2.png'), (50,
 skin3 = pygame.transform.scale(pygame.image.load('images/Skins/skin3.png'), (50, 50))
 skin4 = pygame.transform.scale(pygame.image.load('images/Skins/skin4.png'), (50, 50))
 
+
 # images
 background = pygame.transform.scale(pygame.image.load(r'images/textures/bg.png'), (screenWidth, screenHeight))
 gameOver = pygame.transform.scale(pygame.image.load('images/tittles/gameOver.png'), (400, 100))
 board = pygame.image.load('images/tittles/board.png')
 
+# levels
+firstLevel = True
+secondLevel = False
+thirdLevel = False

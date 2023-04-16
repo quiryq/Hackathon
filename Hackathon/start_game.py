@@ -1,9 +1,7 @@
-import pygame, sys, random
-import var, Objects
-import Play
+import pygame, sys, var, Objects, Play
 from pygame.locals import * 
 from Functions import * 
-from Player import Player
+
 pygame.init()
 
 def startGame():
@@ -13,8 +11,13 @@ def startGame():
     brend = pygame.image.load('images/tittles/brend.png')
     titleX = int((var.screenWidth - tittle.get_width()) * 0.5)
     titleY = int(var.screenHeight*0.2)
-    pygame.mixer.music.load('music/bg_music.mp3')
-    pygame.mixer.music.play()
+    pygame.mixer.music.load('music/menu_music.mp3')
+    pygame.mixer.music.play(-1)
+    var.firstLevel = True
+    var.secondLevel = False
+    var.thirdLevel = False
+    var.scrollSpeed = 6
+    var.speedEnemies = 6
     
     while True:
         for event in pygame.event.get():
